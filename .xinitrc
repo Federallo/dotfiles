@@ -47,9 +47,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-#setting keyboard layouts
-setxkbmap -layout us,it -option grp:alt_shift_toggle
-#setting monitor refresh rate and resolution
-xrandr --output DP-0 --mode 344x1440 --rate 144
+#setting keyboard layouts, refresh rate and resolution
+setxkbmap -layout us,it -option grp:alt_shift_toggle && xrandr --output DP-0 --mode 344x1440 --rate 144
 #executing window manager
 exec xmonad
