@@ -1,3 +1,5 @@
+import = [ "~/.config/alacritty/themes/remedy_dark.toml" ]
+
 [font]
 size = 10.0
 
