@@ -9,7 +9,7 @@ import XMonad.Util.EZConfig
 import XMonad.Layout.Spacing --to add space around windows
 
 --adding three columns layout
-myLayoutHook = avoidStruts $ ThreeCol 1 (3/100) (1/2) ||| ThreeColMid 1 (3/100) (1/2)
+myLayoutHook = avoidStruts $ ThreeColMid 1 (3/100) (1/2)
 
 main::IO()
 main = xmonad . ewmhFullscreen . docks . ewmh $ customConfig --dollar is used only to create aesthetical space between functions
