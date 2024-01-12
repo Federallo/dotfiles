@@ -7,9 +7,11 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Hooks.ManageDocks --to make bar always appear
 import XMonad.Util.EZConfig
 import XMonad.Layout.Spacing --to add space around windows
+import XMonad.Layout.NoBorders --to remove the red border around windows
 
 --adding three columns layout
-myLayoutHook = avoidStruts $ ThreeColMid 1 (3/100) (1/2)
+myLayoutHook = avoidStruts $ noBorders $ smartBorders $ ThreeColMid 1 (3/100) (1/2) --avodiStruts is to keep the bar alongside windows, smartBorders and noBorders to remove 
+										    --highlighted windows
 
 main::IO()
 main = xmonad . ewmhFullscreen . docks . ewmh $ customConfig --dollar is used only to create aesthetical space between functions
@@ -19,7 +21,7 @@ main = xmonad . ewmhFullscreen . docks . ewmh $ customConfig --dollar is used on
 
 customConfig = def 
 	{ terminal = "alacritty"
-	--adding wallpaper and bar launch here to start them only once
+	--to start programs only once
 	, startupHook = myStartupHook
 	--setting up windows layouts and window spaces
 	, layoutHook = spacingWithEdge 10 $ myLayoutHook
@@ -30,6 +32,5 @@ customConfig = def
 
 myStartupHook :: X ()
 myStartupHook = do 
-  spawnOnce "feh --bg-fill ~/.wallpapers/malenia.png"
-  spawnOnce "~/.config/polybar/launch.sh"
-
+  spawnOnce "feh --bg-fill ~/.wallpapers/malenia.png" --to add wallpaper
+  spawnOnce "~/.config/polybar/launch.sh" --to start the bar
