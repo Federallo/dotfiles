@@ -32,5 +32,6 @@ customConfig = def
 
 myStartupHook :: X ()
 myStartupHook = do 
-  spawnOnce "feh --bg-fill ~/.wallpapers/malenia.png" --to add wallpaper
-  spawnOnce "~/.config/polybar/launch.sh" --to start the bar
+  spawn "feh --bg-fill ~/.wallpapers/malenia.png" --to add wallpaper
+  spawn "~/.config/polybar/launch.sh" --to start the bar
+  spawn "killall picom; picom -b" --to start picom
