@@ -16,7 +16,8 @@ myLayoutHook = avoidStruts $ noBorders $ smartBorders $ ThreeColMid 1 (3/100) (1
 main::IO()
 main = xmonad . ewmhFullscreen . docks . ewmh $ customConfig --dollar is used only to create aesthetical space between functions
 	`additionalKeysP`
-	[("M-p", spawn "rofi -show run -icon-theme'Papirus' -show-icons") --opens rofi run to exec programs
+	[("M-p", spawn "rofi -show run -icon-theme'Papirus' -show-icons"), --opens rofi run to exec programs
+	 ("M-s", spawn "flameshot gui --path ~/Pictures/Screenshots") --opens screenshot program
 	]
 
 customConfig = def 
