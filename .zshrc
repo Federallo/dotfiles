@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # alias github's dotfiles
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lt="tree"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
